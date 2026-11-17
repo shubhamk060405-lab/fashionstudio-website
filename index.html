@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>S K STUDIO - Fashion Store</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Top Offer Strip -->
+  <div class="offer-bar">
+    FREE DELIVERY ON ORDERS ABOVE ₹999 | WINTER SALE IS LIVE
+  </div>
+
+  <!-- Header -->
+  <header>
+    <div class="logo">S K STUDIO</div>
+    <nav>
+      <a href="#new">New Arrivals</a>
+      <a href="#clothing">Clothing</a>
+      <a href="#footwear">Footwear</a>
+      <a href="#accessories">Accessories</a>
+    </nav>
+    <div class="header-right">
+      <input type="text" placeholder="Search...">
+      <button onclick="openCart()">Bag (<span id="bag-count">0</span>)</button>
+    </div>
+  </header>
+
+  <!-- Simple Cart Box (Hidden by default) -->
+  <div id="cart-box" class="cart-box">
+    <div class="cart-header">
+      <h3>Your Shopping Bag</h3>
+      <button onclick="closeCart()">X</button>
+    </div>
+    <div id="cart-items">
+      <p>Your bag is empty.</p>
+    </div>
+    <div class="cart-footer">
+      <p><strong>Total: ₹<span id="total-price">0</span></strong></p>
+      <button class="checkout-btn" onclick="checkout()">Place Order</button>
+    </div>
+  </div>
+
+  <!-- Hero Banner -->
+  <div class="hero">
+    <div class="hero-left">
+      <p class="small-tag">NEW COLLECTION 2026</p>
+      <h1>Trendy Fashion for Everyone</h1>
+      <p>Shop the latest clothes, shoes, and accessories at S K STUDIO.</p>
+      <a href="#new" class="btn">Shop Now</a>
+    </div>
+    <div class="hero-right">
+      <img src="https://images.unsplash.com/photo-1509631179647-0177331693ae?w=500" alt="Banner">
+    </div>
+  </div>
+
+  <!-- SECTION 1: NEW ARRIVALS (13 Products) -->
+  <section id="new" class="section">
+    <h2>New Arrivals</h2>
+    <div class="grid">
+
+      <div class="card">
+        <span class="badge">NEW</span>
+        <img src="https://images.unsplash.com/photo-1539533018447-63fcce2678e3?w=300" alt="Product">
+        <h3>Winter Wool Coat</h3>
+        <p class="price">₹2,999</p>
+        <button onclick="addToCart('Winter Wool Coat', 2999)">Add to Bag</button>
+      </div>
+
+      <div class="card">
+        <span class="badge sale">20% OFF</span>
+        <img src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?w=300" alt="Product">
+        <h3>Yellow Party Set</h3>
+        <p class="price">₹1,999 <del>₹2,499</del></p>
+        <button onclick="addToCart('Yellow Party Set', 1999)">Add to Bag</button>
+      </div>
+
+      <div class="card">
+        <span class="badge">NEW</span>
+        <img src="https://images.unsplash.com/photo-1591047139829-d91aecb6caea?w=300" alt="Product">
+        <h3>Bomber Jacket</h3>
+        <p class="price">₹2,199</p>
+        <button onclick="addToCart('Bomber Jacket', 2199)">Add to Bag</button>
+      </div>
+
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1578587018452-892bacefd3f2?w=300" alt="Product">
+        <h3>Knitted Cardigan</h3>
+        <p class="price">₹1,499</p>
+        <button onclick="addToCart('Knitted Cardigan', 1499)">Add to Bag</button>
+      </div>
+
+      <div class="card">
+        <span class="badge sale">15% OFF</span>
+        <img src="https://images.unsplash.com/photo-1551028719-00167b16eac5?w=300" alt="Product">
+        <h3>Black Leather Jacket</h3>
+        <p class="price">₹3,499 <del>₹3,999</del></p>
+        <button onclick="addToCart('Black Leather Jacket', 3499)">Add to Bag</button>
+      </div>
+
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1490481651871-ab68de25d43d?w=300" alt="Product">
+        <h3>Pleated Skirt</h3>
+        <p class="price">₹1,199</p>
+        <button onclick="addToCart('Pleated Skirt', 1199)">Add to Bag</button>
+      </div>
+
+      <div class="card">
+        <span class="badge">NEW</span>
+        <img src="https://images.unsplash.com/photo-1534452203293-494d7ddbf7e0?w=300" alt="Product">
+        <h3>Formal Blazer</h3>
+        <p class="price">₹2,599</p>
+        <button onclick="addToCart('Formal Blazer', 2599)">Add to Bag</button>
+      </div>
+
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1529139574466-a303027c1d8b?w=300" alt="Product">
+        <h3>Evening Gown</h3>
+        <p class="price">₹2,299</p>
+        <button onclick="addToCart('Evening Gown', 2299)">Add to Bag</button>
+      </div>
+
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1548883354-7622d03aca27?w=300" alt="Product">
+        <h3>Street Hoodie</h3>
+        <p class="price">₹1,299</p>
+        <button onclick="addToCart('Street Hoodie', 1299)">Add to Bag</button>
+      </div>
+
+      <div class="card">
+        <span class="badge">NEW</span>
+        <img src="https://images.unsplash.com/photo-1516257984-b1b4d707412e?w=300" alt="Product">
+        <h3>Denim Jacket</h3>
+        <p class="price">₹1,799</p>
+        <button onclick="addToCart('Denim Jacket', 1799)">Add to Bag</button>
+      </div>
+
+      <div class="card">
+        <span class="badge sale">30% OFF</span>
+        <img src="https://images.unsplash.com/photo-1550639525-c97d455acf70?w=300" alt="Product">
+        <h3>Beige Sweater</h3>
+        <p class="price">₹999 <del>₹1,499</del></p>
+        <button onclick="addToCart('Beige Sweater', 999)">Add to Bag</button>
+      </div>
+
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1495105787522-5334e3ffa0ef?w=300" alt="Product">
+        <h3>Long Trench Coat</h3>
+        <p class="price">₹2,899</p>
+        <button onclick="addToCart('Long Trench Coat', 2899)">Add to Bag</button>
+      </div>
+
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1506152983158-b4a74a01c721?w=300" alt="Product">
+        <h3>Corduroy Shirt</h3>
+        <p class="price">₹1,399</p>
+        <button onclick="addToCart('Corduroy Shirt', 1399)">Add to Bag</button>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- SECTION 2: CLOTHING (13 Products) -->
+  <section id="clothing" class="section">
+    <h2>Clothing</h2>
+    <div class="grid">
+
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1594633312681-425c7b97ccd1?w=300" alt="Product">
+        <h3>Wide-Leg Pants</h3>
+        <p class="price">₹1,499</p>
+        <button onclick="addToCart('Wide-Leg Pants', 1499)">Add to Bag</button>
+      </div>
+
+      <div class="card">
+        <span class="badge sale">20% OFF</span>
+        <img src="https://images.unsplash.com/photo-1576566588028-4147f3842f27?w=300" alt="Product">
+        <h3>High Neck Sweater</h3>
+        <p class="price">₹1,099 <del>₹1,399</del></p>
+        <button onclick="addToCart('High Neck Sweater', 1099)">Add to Bag</button>
+      </div>
+
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1598033129183-c4f50c736f10?w=300" alt="Product">
+        <h3>White Cotton Shirt</h3>
+        <p class="price">₹1,199</p>
+        <button onclick="addToCart('White Cotton Shirt', 1199)">Add to Bag</button>
+      </div>
+
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1583743814966-8936f5b7be1a?w=300" alt="Product">
+        <h3>Plain Black T-Shirt</h3>
+        <p class="price">₹599</p>
+        <button onclick="addToCart('Plain Black T-Shirt', 599)">Add to Bag</button>
+      </div>
+
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1541099649105-f69ad21f3246?w=300" alt="Product">
+        <h3>Blue Denim Jeans</h3>
+        <p class="price">₹1,499</p>
+        <button onclick="addToCart('Blue Denim Jeans', 1499)">Add to Bag</button>
+      </div>
+
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1521572267360-ee0c2909d518?w=300" alt="Product">
+        <h3>Plain White T-Shirt</h3>
+        <p class="price">₹499</p>
+        <button onclick="addToCart('Plain White T-Shirt', 499)">Add to Bag</button>
+      </div>
+
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?w=300" alt="Product">
+        <h3>Printed T-Shirt</h3>
+        <p class="price">₹699</p>
+        <button onclick="addToCart('Printed T-Shirt', 699)">Add to Bag</button>
+      </div>
+
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1562157873-818bc0726f68?w=300" alt="Product">
+        <h3>Polo T-Shirt</h3>
+        <p class="price">₹899</p>
+        <button onclick="addToCart('Polo T-Shirt', 899)">Add to Bag</button>
+      </div>
+
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1543076447-215ad9ba6923?w=300" alt="Product">
+        <h3>Beige Chino Pants</h3>
+        <p class="price">₹1,399</p>
+        <button onclick="addToCart('Beige Chino Pants', 1399)">Add to Bag</button>
+      </div>
+
+      <div class="card">
+        <span class="badge sale">25% OFF</span>
+        <img src="https://images.unsplash.com/photo-1434389677669-e08b4cac3105?w=300" alt="Product">
+        <h3>Winter Wool Skirt</h3>
+        <p class="price">₹999 <del>₹1,399</del></p>
+        <button onclick="addToCart('Winter Wool Skirt', 999)">Add to Bag</button>
+      </div>
+
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1554568114-16ed143d6978?w=300" alt="Product">
+        <h3>Striped Casual Shirt</h3>
+        <p class="price">₹1,299</p>
+        <button onclick="addToCart('Striped Casual Shirt', 1299)">Add to Bag</button>
+      </div>
+
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1489987707025-afc232f7ea0f?w=300" alt="Product">
+        <h3>Cotton Round Neck Tee</h3>
+        <p class="price">₹549</p>
+        <button onclick="addToCart('Cotton Round Neck Tee', 549)">Add to Bag</button>
+      </div>
+
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1596755094514-f87e34085b2c?w=300" alt="Product">
+        <h3>Printed Summer Shirt</h3>
+        <p class="price">₹1,099</p>
+        <button onclick="addToCart('Printed Summer Shirt', 1099)">Add to Bag</button>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- SECTION 3: FOOTWEAR (12 Products) -->
+  <section id="footwear" class="section">
+    <h2>Footwear</h2>
+    <div class="grid">
+
+      <div class="card">
+        <span class="badge">NEW</span>
+        <img src="https://images.unsplash.com/photo-1608256246200-53e635b5b65f?w=300" alt="Product">
+        <h3>Chelsea Boots</h3>
+        <p class="price">₹2,999</p>
+        <button onclick="addToCart('Chelsea Boots', 2999)">Add to Bag</button>
+      </div>
+
+      <div class="card">
+        <span class="badge sale">15% OFF</span>
+        <img src="https://images.unsplash.com/photo-1614252235316-8c857d38b5f4?w=300" alt="Product">
+        <h3>Brown Loafers</h3>
+        <p class="price">₹2,199 <del>₹2,599</del></p>
+        <button onclick="addToCart('Brown Loafers', 2199)">Add to Bag</button>
+      </div>
+
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1549298916-b41d501d3772?w=300" alt="Product">
+        <h3>White Sneakers</h3>
+        <p class="price">₹1,999</p>
+        <button onclick="addToCart('White Sneakers', 1999)">Add to Bag</button>
+      </div>
+
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1560769629-975ec94e6a86?w=300" alt="Product">
+        <h3>Casual Suede Shoes</h3>
+        <p class="price">₹2,099</p>
+        <button onclick="addToCart('Casual Suede Shoes', 2099)">Add to Bag</button>
+      </div>
+
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1595950653106-6c9ebd614d3a?w=300" alt="Product">
+        <h3>Running Shoes</h3>
+        <p class="price">₹2,399</p>
+        <button onclick="addToCart('Running Shoes', 2399)">Add to Bag</button>
+      </div>
+
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1543163521-1bf539c55dd2?w=300" alt="Product">
+        <h3>Ankle Heel Boots</h3>
+        <p class="price">₹2,699</p>
+        <button onclick="addToCart('Ankle Heel Boots', 2699)">Add to Bag</button>
+      </div>
+
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1525966222134-fcfa99b8ae77?w=300" alt="Product">
+        <h3>Red Canvas Shoes</h3>
+        <p class="price">₹1,299</p>
+        <button onclick="addToCart('Red Canvas Shoes', 1299)">Add to Bag</button>
+      </div>
+
+      <div class="card">
+        <span class="badge sale">20% OFF</span>
+        <img src="https://images.unsplash.com/photo-1533867617858-e7b97e060509?w=300" alt="Product">
+        <h3>Black Formal Shoes</h3>
+        <p class="price">₹1,999 <del>₹2,499</del></p>
+        <button onclick="addToCart('Black Formal Shoes', 1999)">Add to Bag</button>
+      </div>
+
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1512374382146-233842b6a83b?w=300" alt="Product">
+        <h3>High-Top Sneakers</h3>
+        <p class="price">₹2,499</p>
+        <button onclick="addToCart('High-Top Sneakers', 2499)">Add to Bag</button>
+      </div>
+
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1575537302964-96cd47c06b1b?w=300" alt="Product">
+        <h3>Tan Leather Boots</h3>
+        <p class="price">₹3,199</p>
+        <button onclick="addToCart('Tan Leather Boots', 3199)">Add to Bag</button>
+      </div>
+
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1516478177764-9fe5bd7e9717?w=300" alt="Product">
+        <h3>Sports Trainers</h3>
+        <p class="price">₹2,599</p>
+        <button onclick="addToCart('Sports Trainers', 2599)">Add to Bag</button>
+      </div>
+
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1527010154944-f2241763d806?w=300" alt="Product">
+        <h3>Slip-On Casual Shoes</h3>
+        <p class="price">₹1,199</p>
+        <button onclick="addToCart('Slip-On Casual Shoes', 1199)">Add to Bag</button>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- SECTION 4: ACCESSORIES (12 Products) -->
+  <section id="accessories" class="section">
+    <h2>Accessories</h2>
+    <div class="grid">
+
+      <div class="card">
+        <span class="badge">BEST</span>
+        <img src="https://images.unsplash.com/photo-1584917865442-de89df76afd3?w=300" alt="Product">
+        <h3>Leather Sling Bag</h3>
+        <p class="price">₹2,199</p>
+        <button onclick="addToCart('Leather Sling Bag', 2199)">Add to Bag</button>
+      </div>
+
+      <div class="card">
+        <span class="badge sale">30% OFF</span>
+        <img src="https://images.unsplash.com/photo-1511499767150-a48a237f0083?w=300" alt="Product">
+        <h3>Black Sunglasses</h3>
+        <p class="price">₹799 <del>₹1,199</del></p>
+        <button onclick="addToCart('Black Sunglasses', 799)">Add to Bag</button>
+      </div>
+
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1524592094714-0f0654e20314?w=300" alt="Product">
+        <h3>Leather Strap Watch</h3>
+        <p class="price">₹2,499</p>
+        <button onclick="addToCart('Leather Strap Watch', 2499)">Add to Bag</button>
+      </div>
+
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=300" alt="Product">
+        <h3>Travel Backpack</h3>
+        <p class="price">₹2,299</p>
+        <button onclick="addToCart('Travel Backpack', 2299)">Add to Bag</button>
+      </div>
+
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1622560480605-d83c853bc5c3?w=300" alt="Product">
+        <h3>Printed Neck Scarf</h3>
+        <p class="price">₹599</p>
+        <button onclick="addToCart('Printed Neck Scarf', 599)">Add to Bag</button>
+      </div>
+
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1617038260897-41a1f14a8ca0?w=300" alt="Product">
+        <h3>Silver Finger Ring</h3>
+        <p class="price">₹699</p>
+        <button onclick="addToCart('Silver Finger Ring', 699)">Add to Bag</button>
+      </div>
+
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1548036328-c9fa89d128fa?w=300" alt="Product">
+        <h3>Brown Handbag</h3>
+        <p class="price">₹1,899</p>
+        <button onclick="addToCart('Brown Handbag', 1899)">Add to Bag</button>
+      </div>
+
+      <div class="card">
+        <span class="badge sale">15% OFF</span>
+        <img src="https://images.unsplash.com/photo-1572635196237-14b3f281503f?w=300" alt="Product">
+        <h3>Round Sunglasses</h3>
+        <p class="price">₹899 <del>₹1,099</del></p>
+        <button onclick="addToCart('Round Sunglasses', 899)">Add to Bag</button>
+      </div>
+
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1627123424574-724758594e93?w=300" alt="Product">
+        <h3>Men's Leather Wallet</h3>
+        <p class="price">₹649</p>
+        <button onclick="addToCart('Mens Leather Wallet', 649)">Add to Bag</button>
+      </div>
+
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1522312346375-d1a52e2b99b3?w=300" alt="Product">
+        <h3>Silver Chain Watch</h3>
+        <p class="price">₹2,999</p>
+        <button onclick="addToCart('Silver Chain Watch', 2999)">Add to Bag</button>
+      </div>
+
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1576871337632-b9aef4c17ab9?w=300" alt="Product">
+        <h3>Winter Knit Cap</h3>
+        <p class="price">₹399</p>
+        <button onclick="addToCart('Winter Knit Cap', 399)">Add to Bag</button>
+      </div>
+
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1624222247344-550fb60583dc?w=300" alt="Product">
+        <h3>Brown Leather Belt</h3>
+        <p class="price">₹799</p>
+        <button onclick="addToCart('Brown Leather Belt', 799)">Add to Bag</button>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <h3>S K STUDIO</h3>
+    <p>Online Clothing, Footwear & Accessories Store</p>
+    <p class="copy">@2026 -: S K STUDIO :-</p>
+  </footer>
+
+  <!-- Simple Student-Level JavaScript for Cart -->
+  <script>
+    let cart = [];
+
+    function addToCart(name, price) {
+      cart.push({ name: name, price: price });
+      updateCart();
+      alert(name + " added to your bag!");
+    }
+
+    function removeItem(index) {
+      cart.splice(index, 1);
+      updateCart();
+    }
+
+    function updateCart() {
+      document.getElementById("bag-count").innerText = cart.length;
+      let cartItems = document.getElementById("cart-items");
+      let total = 0;
+
+      if (cart.length === 0) {
+        cartItems.innerHTML = "<p>Your bag is empty.</p>";
+        document.getElementById("total-price").innerText = "0";
+        return;
+      }
+
+      cartItems.innerHTML = "";
+      for (let i = 0; i < cart.length; i++) {
+        total += cart[i].price;
+        cartItems.innerHTML += `
+          <div class="cart-row">
+            <span>${cart[i].name} - ₹${cart[i].price}</span>
+            <button onclick="removeItem(${i})">Remove</button>
+          </div>
+        `;
+      }
+      document.getElementById("total-price").innerText = total;
+    }
+
+    function openCart() {
+      document.getElementById("cart-box").style.display = "block";
+    }
+
+    function closeCart() {
+      document.getElementById("cart-box").style.display = "none";
+    }
+
+    function checkout() {
+      if (cart.length === 0) {
+        alert("Please add some items first!");
+      } else {
+        alert("Thank you! Your order from S K STUDIO has been placed.");
+        cart = [];
+        updateCart();
+        closeCart();
+      }
+    }
+  </script>
+
+</body>
+</html>
